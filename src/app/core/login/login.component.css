@@ -1,0 +1,25 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.main-div{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-link{
+    display: block;
+    cursor: pointer;
+}
+
+::ng-deep .p-card .p-card-title {
+  margin-left: 5em;
+}

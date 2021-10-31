@@ -1,5 +1,5 @@
 {
-  "name": "primeng-quickstart-cli",
+  "name": "hirebolt",
   "version": "1.0.0-SNAPSHOT",
   "license": "MIT",
   "scripts": {
@@ -10,19 +10,19 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primefaces/primeng-quickstart-cli.git"
-  },
   "dependencies": {
     "@angular/animations": "~12.0.0",
+    "@angular/cdk": "^12.0.6",
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
     "@angular/forms": "~12.0.0",
+    "@angular/material": "^12.0.6",
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "angular-disable-browser-back-button": "^1.0.2",
+    "ngx-toastr": "^14.1.0",
     "primeflex": "2.0.0",
     "primeicons": "4.1.0",
     "primeng": "~12.1.0",

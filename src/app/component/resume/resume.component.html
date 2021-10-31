@@ -1,0 +1,14 @@
+<div class="main-div">
+  <mat-card color="primary">
+      <mat-card-title>Resume</mat-card-title>
+      <div><label class="form-control-label"></label>
+          <small class="text-muted d-block mt-0">Upload the resume here:</small>
+          <app-file-picker message="Drag and drop a resume file or click here" (fileChanged)="onFileChanged($event)">
+          </app-file-picker>
+          <button mat-stroked-button (click)="createUpload()" class="btn btn-primary btn-sm float-right mt-3">Upload Resume</button>
+      </div>
+      <div>
+          <button mat-stroked-button (click)="viewResume()">Download/View Resume</button>
+      </div>
+  </mat-card>
+</div>

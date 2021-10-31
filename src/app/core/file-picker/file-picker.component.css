@@ -1,0 +1,8 @@
+.app-file-picker {
+
+  border-radius: 2px;
+  border: 1px dashed #C1C1C1;
+  padding: 2rem;
+  cursor: pointer;
+  text-align: center;
+}

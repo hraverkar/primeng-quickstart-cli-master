@@ -1,0 +1,12 @@
+<div class="main-div">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>Job Title : {{data.jobTitle}}</mat-card-title>
+          <mat-card-subtitle>Job Location : {{data.location}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions *ngIf="hasAccessTokenAndValidRole()">
+          <button mat-stroked-button color="primary" (click)="applyJob(data.jobRequisitionId)">Apply for Job</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

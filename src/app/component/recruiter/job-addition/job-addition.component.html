@@ -1,0 +1,77 @@
+<div class="main-div">
+  <mat-card color="primary">
+      <mat-card-title>Job Addition</mat-card-title>
+      <form class="example-form" [formGroup]="jobAdditionForm" (ngSubmit)="onJobAddition()">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Job Title</mat-label>
+              <input matInput formControlName="jobTitle" type="text" placeholder="Please enter job title">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Job Requisition ID</mat-label>
+              <input matInput formControlName="jobRequisitionId" type="text"
+                  placeholder="Please enter job Requisition id">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Location</mat-label>
+              <input matInput formControlName="location" type="text" placeholder="Please enter location">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Job Type</mat-label>
+              <input matInput formControlName="jobType" type="text" placeholder="Please enter the job type">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Designation</mat-label>
+              <textarea matInput formControlName="designation" type="text"
+                  placeholder="Please enter the designation"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Company Name</mat-label>
+              <textarea matInput formControlName="companyname" type="text"
+                  placeholder="Please enter the company name"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Entity</mat-label>
+              <textarea matInput formControlName="entity" type="text"
+                  placeholder="Please enter the entity"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Categoty</mat-label>
+              <input matInput formControlName="category" type="text" placeholder="Please enter the category">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>skills</mat-label>
+              <textarea matInput formControlName="skills" type="text"
+                  placeholder="Please enter the skills"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Responsibilities</mat-label>
+              <textarea matInput formControlName="responsibilities" type="text"
+                  placeholder="Please enter the responsibilities"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Role Requirement</mat-label>
+              <textarea matInput formControlName="roleRequirement" type="text"
+                  placeholder="Please enter the role responsibilities"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Qualifications</mat-label>
+              <textarea matInput formControlName="qualification" type="text"
+                  placeholder="Please enter the qualification"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Any Notes</mat-label>
+              <textarea matInput formControlName="notes" type="text"
+                  placeholder="Please enter the any notes"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Flyer upload</mat-label>
+              <input matInput formControlName="flyer" type="text" placeholder="Please upload any flyer">
+          </mat-form-field>
+
+          <button mat-stroked-button type="submit" color="primary">Job Addition</button>
+      </form>
+  </mat-card>
+</div>

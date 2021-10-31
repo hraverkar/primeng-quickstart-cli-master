@@ -1,0 +1,23 @@
+<div *ngIf="hasAccessToken()">
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="avatar">{{userName}}</button>
+  <mat-menu #menu="matMenu">
+    <div *ngIf="hasAccessTokenAndValidRole()">
+      <button mat-menu-item color="primary" (click)="viewProfile()">
+        <mat-icon color="primary">person</mat-icon>
+        Profile
+      </button>
+    </div>
+    <div *ngIf="hasAccessTokenAndValidRole()">
+      <button mat-menu-item color="primary" (click)="resumeDialog()">
+        <mat-icon color="primary">insert_drive_file</mat-icon>
+        Resume
+      </button>
+    </div>
+    <div>
+      <button mat-menu-item color="primary" (click)="logout()">
+        <mat-icon color="primary">logout</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-menu>
+</div>

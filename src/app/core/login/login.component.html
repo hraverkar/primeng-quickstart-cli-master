@@ -1,39 +1,20 @@
-<!-- <div class="main-div">
-  <mat-card color="primary">
-      <mat-card-title>Login</mat-card-title>
-      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>User Name</mat-label>
-              <input matInput formControlName="username" type="text" placeholder="Please enter the user name">
-          </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Password</mat-label>
-              <input matInput formControlName="password" type="password" placeholder="Please enter the Password">
-          </mat-form-field>
-          <a class="text-link" (click)="forgotPassword()"> Forgot Password </a>
-          <p></p>
-          <button mat-stroked-button type="submit" color="primary">Login</button>
-      </form>
-  </mat-card>
-</div> -->
 <div class="main-div">
-    <p-card header="Login" [style]="{width: '360px'}" styleClass="p-card-shadow" class="p-shadow-24">
-        <div class="p-field p-grid">
-            <label for="firstname3" class="p-col-fixed" style="width:100px">User Name</label>
-            <div class="p-col">
-                <input id="firstname3" type="text" pInputText>
+    <p-card header="Login" [style]="{width: '360px'}" class="p-shadow-24" >
+        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="p-field p-grid">
+                <label for="firstname3" class="p-col-fixed" style="width:100px">User Name</label>
+                <div class="p-col">
+                    <input id="username" type="text" pInputText formControlName="username">
+                </div>
             </div>
-        </div>
-        <div class="p-field p-grid">
-            <label for="lastname3" class="p-col-fixed" style="width:100px">Password</label>
-            <div class="p-col">
-                <input id="lastname3" type="text" pInputText>
+            <div class="p-field p-grid">
+                <label for="lastname3" class="p-col-fixed" style="width:100px">Password</label>
+                <div class="p-col">
+                    <input id="password" type="password" pInputText formControlName="password">
+                </div>
             </div>
-        </div>
-        <ng-template pTemplate="footer">
-            <button pButton type="button" label="Login"
-            class="p-button-raised p-button-primary p-button"  icon="pi pi-check" (click)="onMenuButtonClick('signup')"></button>
-            <p-button label="Login" icon="pi pi-check" ></p-button>
-        </ng-template>
+            <button pButton type="submit" label="Login" [style]="{'margin-left': '7em'}" [loading]="isLoading"
+                class="p-button-raised p-button-primary p-button" icon="pi pi-check"></button>
+        </form>
     </p-card>
 </div>

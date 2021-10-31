@@ -1,0 +1,9 @@
+<div class="app-file-picker" [class.mouse-over]="isDragMouseOver" (click)="fileInput.click()"
+    (dragenter)="onDragEnter($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)" >
+  <h5 class="text-muted">
+    <strong>{{message}}</strong>
+    <input #fileInput type="file" [accept]="accept" (change)="onFileInput($event)" />
+  </h5>
+  <img src="/assets/fileupload/Upload_to_cloud_Large_NEG_lo.png" />
+  <div class="file-info text-muted font-weight-bold" [class.visible]="file">{{file?.name}} ({{file?.size/1000}}kb)</div>
+</div>

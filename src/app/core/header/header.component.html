@@ -35,9 +35,16 @@
   </div>
 
   <div class="p-toolbar-group-right">
-    <button pButton type="button" [ngStyle]="{'margin-right':'8px'}" label="Login"
-      class="p-button-raised p-button-secondary p-button-sm" (click)="onMenuButtonClick('login')"></button>
-    <button pButton type="button" [ngStyle]="{'margin-right':'8px'}" label="Sign Up"
-      class="p-button-raised p-button-secondary p-button-sm" (click)="onMenuButtonClick('signup')"></button>
+    <div *ngIf="!hasAccessToken()">
+      <button pButton type="button" [ngStyle]="{'margin-right':'8px'}" label="Login"
+        class="p-button-raised p-button-secondary p-button-sm" (click)="onMenuButtonClick('login')"></button>
+      <button pButton type="button" [ngStyle]="{'margin-right':'8px'}" label="Sign Up"
+        class="p-button-raised p-button-secondary p-button-sm" (click)="onMenuButtonClick('signup')"></button>
+    </div>
+
+    <div *ngIf="hasAccessToken()" class="menu">
+      <app-logout></app-logout>
+    </div>
   </div>
+
 </p-toolbar>

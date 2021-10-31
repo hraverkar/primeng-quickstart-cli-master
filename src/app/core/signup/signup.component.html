@@ -1,0 +1,73 @@
+<!-- <div class="main-div">
+  <mat-card color="primary">
+      <mat-card-title>Sign Up</mat-card-title>
+      <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onRegister()">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>User Name</mat-label>
+              <input matInput formControlName="username" type="text" placeholder="Please enter the user name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" formControlName="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Please enter the Password">
+          </mat-form-field>
+
+          <label id="example-radio-group-label">Please select type :  </label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" color="primary" class="example-radio-group"
+              [(ngModel)]="userType" [ngModelOptions]="{standalone: true}">
+              <mat-radio-button  class="example-radio-button" *ngFor="let userType of userTypes" [value]="userType">
+                  {{userType}}
+              </mat-radio-button>
+          </mat-radio-group>
+          <button mat-stroked-button type="submit" class="register" color="primary">Register</button>
+      </form>
+  </mat-card>
+</div> -->
+
+<div class="main-div">
+    <p-card header="Sign Up" [style]="{width: '500px'}" class="p-shadow-24">
+        <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onRegister()">
+            <div class="p-field p-grid">
+                <label for="firstname3" class="p-col-fixed" style="width:150px">User Name</label>
+                <div class="p-col">
+                    <input id="username" type="text" pInputText formControlName="username">
+                </div>
+            </div>
+            <div class="p-field p-grid">
+                <label for="lastname3" class="p-col-fixed" style="width:150px">Email</label>
+                <div class="p-col">
+                    <input id="email" type="text" pInputText formControlName="email">
+                </div>
+            </div>
+            <div class="p-field p-grid">
+                <label for="lastname3" class="p-col-fixed" style="width:150px">Password</label>
+                <div class="p-col">
+                    <input id="password" type="password" pInputText formControlName="password">
+                </div>
+            </div>
+            <br />
+            <label id="example-radio-group-label">Please Select User Type : </label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" color="primary" class="example-radio-group"
+                [(ngModel)]="userType" [ngModelOptions]="{standalone: true}">
+                <mat-radio-button class="example-radio-button" *ngFor="let userType of userTypes" [value]="userType">
+                    {{userType}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <br />
+            <br />
+            <button pButton type="submit" label="Sign Up" [style]="{'margin-left': '11em'}" [loading]="isLoading"
+                class="p-button-raised p-button-primary p-button" icon="pi pi-user"></button>
+        </form>
+    </p-card>
+</div>

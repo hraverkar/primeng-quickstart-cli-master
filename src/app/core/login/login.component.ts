@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
+  public isLoading = false;
 
   public loginForm = new FormGroup({
     username: new FormControl(),
@@ -28,10 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(): void {
+    this.isLoading = true;
     this.loginService.login(this.loginForm.value).subscribe((res) => {
       console.log(res);
       if (res.accessToken === null) {
         this.toastrService.add({ severity: 'error', summary: 'Error', detail: res.message });
+        this.isLoading = false;
       }
       else if ((res.accessToken && res.username) && res.isActive) {
         sessionStorage.setItem("ACCESS_TOKEN", res.accessToken);
@@ -47,8 +50,10 @@ export class LoginComponent implements OnInit {
         } else {
           this.router.navigate(["/job-list"]);
         }
+        this.isLoading = false;
       } else {
         this.toastrService.add({ severity: 'warn', summary: 'Warn', detail: "Please contact administrator to activate your account or Please wait sometime to for account activation." });
+        this.isLoading = false;
       }
     });
   }

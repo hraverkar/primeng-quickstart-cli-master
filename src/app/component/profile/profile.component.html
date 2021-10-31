@@ -1,0 +1,28 @@
+<div class="main-div">
+  <mat-card color="primary">
+      <mat-card-title>User Profile</mat-card-title>
+      <form class="example-form" [formGroup]="updateProfileForm" (ngSubmit)="userProfileUpdate()">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>User Name</mat-label>
+              <input matInput formControlName="username" type="text" placeholder="Please enter the user name"
+                  readonly>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="text" placeholder="Please enter the email" readonly>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Full Name</mat-label>
+              <input matInput formControlName="fullname" type="text" placeholder="Please enter the full name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" type="text" placeholder="Please enter the address">
+          </mat-form-field>
+
+          <button mat-stroked-button type="submit" color="primary">Update Profile</button>
+      </form>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+<div class="main-div"><h2>Applied Job History</h2></div>
+<div class="flex-container">
+    <mat-card class="flex-item" *ngFor="let info of data">
+        <!-- <img mat-card-image src={{article.thumbnail.path}}.{{article.thumbnail.extension}} alt="{{article.name}}"> -->
+        <mat-card-header>
+            <mat-card-title>{{info.jobTitle}}</mat-card-title>
+            <mat-card-subtitle>Job Location: {{info.location}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-stroked-button color="primary" (click)="openDialog(info.jobRequisitionId, userEmail)">Withdraw Application</button>
+            <!-- <button mat-stroked-button color="primary" (click)="onJobWithdrawClick(info.id, userEmail)">Withdraw Application</button> -->
+        </mat-card-actions>
+    </mat-card>
+</div>

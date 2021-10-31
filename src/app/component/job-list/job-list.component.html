@@ -1,0 +1,57 @@
+<div class="main-div">
+  <mat-card color="primary">
+      <mat-card-title>Job Search</mat-card-title>
+      <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Category</mat-label>
+              <mat-select [(ngModel)]="selectedCategory" name="category">
+                  <mat-option *ngFor="let category of categories" [value]="category">
+                      {{category}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Emp Type</mat-label>
+              <mat-select [(ngModel)]="selectedjobType" name="jobType">
+                  <mat-option *ngFor="let jobType of jobTypes" [value]="jobType">
+                      {{jobType}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Job Level</mat-label>
+              <mat-select [(ngModel)]="selectedjobLevel" name="jobLevel">
+                  <mat-option *ngFor="let jobLevel of jobLevels" [value]="jobLevel">
+                      {{jobLevel}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+      </form>
+      <div>
+          <button mat-stroked-button color="primary" style="margin-right:16px;" [disabled]="isSearchDisabled()"
+              (click)="onSearch()">Search</button>
+          <button mat-stroked-button color="primary" (click)="onClear()">Clear</button>
+      </div>
+  </mat-card>
+</div>
+
+<div class="flex-container">
+  <mat-card class="flex-item" *ngFor="let information of jobInformation">
+      <!-- <img mat-card-image src={{article.thumbnail.path}}.{{article.thumbnail.extension}} alt="{{article.name}}"> -->
+      <mat-card-header>
+          <mat-card-title>{{information.jobTitle}}</mat-card-title>
+          <mat-card-subtitle>Job Location: {{information.location}}</mat-card-subtitle>
+      </mat-card-header>
+      <h3>Skills:</h3>
+      <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+          (cdkDropListDropped)="drop($event)">
+          <mat-chip class="example-box" cdkDrag *ngFor="let skill of information.skills.split(',')">
+              {{skill}}
+          </mat-chip>
+      </mat-chip-list>
+
+      <mat-card-actions>
+          <button mat-stroked-button color="primary" (click)="fullJobDescription(information.jobRequisitionId)">View Job</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
